@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="a543a424-9c07-45cf-83b4-c592e30fa80f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__junit_junit_3_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessGame/Img/BB.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessGame/Img/BK.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessGame/Img/BN.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessGame/Img/BP.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessGame/Img/BQ.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessGame/Img/BR.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessGame/Img/WB.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessGame/Img/WK.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessGame/Img/WN.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessGame/Img/WP.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessGame/Img/WQ.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessGame/Img/WR.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessGame/src/main/java/com/example/chessgame/pieces/Bishop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessGame/src/main/java/com/example/chessgame/pieces/Cannon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessGame/src/main/java/com/example/chessgame/pieces/King.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessGame/src/main/java/com/example/chessgame/pieces/Knight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessGame/src/main/java/com/example/chessgame/pieces/Pawn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessGame/src/main/java/com/example/chessgame/pieces/Piece.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessGame/src/main/java/com/example/chessgame/pieces/PieceSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessGame/src/main/java/com/example/chessgame/pieces/Queen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessGame/src/main/java/com/example/chessgame/pieces/Rook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessGame/src/main/java/com/example/chessgame/pieces/Shield.java" afterDir="false" />
+    </list>
+=======
+    <list default="true" id="a543a424-9c07-45cf-83b4-c592e30fa80f" name="Changes" comment="" />
+>>>>>>> Jordan
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+<<<<<<< HEAD
+=======
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="Dalil" />
+      </map>
+    </option>
+>>>>>>> Jordan
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2XykOzLKbtvt5KWVI0Kze0imGyl" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Jordan",
+    "last_opened_file_path": "/Users/isaac/EPITECH/Projet_2/T-JAV-501-MPL_2/ChessGame/ChessGame/src/main/java/com/example/chessgame",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ChessGame/src/main/java/com/example/chessgame" />
+      <recent name="$PROJECT_DIR$/ChessGame/Img" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a543a424-9c07-45cf-83b4-c592e30fa80f" name="Changes" comment="" />
+      <created>1699608679004</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1699608679004</updated>
+<<<<<<< HEAD
+      <workItem from="1699608680486" duration="843000" />
+=======
+      <workItem from="1699608680486" duration="1200000" />
+>>>>>>> Jordan
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
