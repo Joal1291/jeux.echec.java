@@ -23,35 +23,103 @@ public class Pawn extends Pieces{
         if(this.chessboard.getDepartureSquare() != null){
             if(this.firstmove){
                 if(Objects.equals(this.color, "white")){
-                    if (x == this.posX - 2 && y == this.posY){
+                    if (x == this.posX - 2 && y == this.posY && this.chessboard.getSquare(x,y).isFreeCase()){
                         return true;
                     }
-                    if (x == this.posX - 1 && y == this.posY){
+                    if (x == this.posX - 1 && y == this.posY && this.chessboard.getSquare(x,y).isFreeCase()){
                         return true;
                     }
-                    if (x == this.posX - 1 && y == this.posY + 1 || x == this.posX - 1 && y == this.posY - 1){
-                        if (!this.chessboard.getDestinationSquare().isFreeCase() && Objects.equals(this.chessboard.getDestinationSquare().getPiece().getType(), "black")){
-                            return true;
-                        } else {
+                    if (x == this.posX - 1 && y == this.posY + 1){
+                        if (this.chessboard.getSquare(this.posX - 1, this.posY + 1).getPiece() == null){
                             return false;
+                        }else{
+                            if (this.chessboard.getSquare(this.posX - 1, this.posY + 1).getPiece().getColor() == "black"){
+                                return true;
+                            }else return false;
+                        }
+                    }
+                    if (x == this.posX - 1 && y == this.posY - 1){
+                        if (this.chessboard.getSquare(this.posX - 1, this.posY - 1).getPiece() == null){
+                            return false;
+                        }else{
+                            if (this.chessboard.getSquare(this.posX - 1, this.posY - 1).getPiece().getColor() == "black"){
+                                return true;
+                            }else return false;
                         }
                     }
                 }else{
-                    if (x == this.posX + 2 && y == this.posY){
+                    if (x == this.posX + 2 && y == this.posY && this.chessboard.getSquare(x,y).isFreeCase()){
                         return true;
                     }
-                    if (x == this.posX + 1 && y == this.posY){
+                    if (x == this.posX + 1 && y == this.posY && this.chessboard.getSquare(x,y).isFreeCase()){
                         return true;
+                    }
+                    if (x == this.posX + 1 && y == this.posY + 1){
+                        if (this.chessboard.getSquare(this.posX + 1, this.posY + 1).getPiece() == null){
+                            return false;
+                        }else{
+                            if (this.chessboard.getSquare(this.posX + 1, this.posY + 1).getPiece().getColor() == "white"){
+                                return true;
+                            }else return false;
+                        }
+
+                    }
+                    if (x == this.posX + 1 && y == this.posY - 1){
+                        if (this.chessboard.getSquare(this.posX + 1, this.posY - 1).getPiece() == null){
+                            return false;
+                        }else{
+                            if (this.chessboard.getSquare(this.posX + 1, this.posY - 1).getPiece().getColor() == "white"){
+                                return true;
+                            }else return false;
+                        }
                     }
                 }
             }else{
                 if (Objects.equals(this.color, "white")){
-                    if (x == this.posX - 1 && y == this.posY){
+                    if (x == this.posX - 1 && y == this.posY && this.chessboard.getSquare(x,y).isFreeCase()){
                         return true;
                     }
+                    if (x == this.posX - 1 && y == this.posY + 1){
+                        if (this.chessboard.getSquare(this.posX - 1, this.posY + 1).getPiece() == null){
+                            return false;
+                        }else{
+                            if (this.chessboard.getSquare(this.posX - 1, this.posY + 1).getPiece().getColor() == "black"){
+                                return true;
+                            }else return false;
+                        }
+
+                    }
+                    if (x == this.posX - 1 && y == this.posY - 1 ){
+                        if (this.chessboard.getSquare(this.posX - 1, this.posY - 1).getPiece() == null){
+                            return false;
+                        }else{
+                            if (this.chessboard.getSquare(this.posX - 1, this.posY - 1).getPiece().getColor() == "black"){
+                                return true;
+                            }else return false;
+                        }
+                    }
                 }else{
-                    if (x == this.posX + 1 && y == this.posY){
+                    if (x == this.posX + 1 && y == this.posY && this.chessboard.getSquare(x,y).isFreeCase()){
                         return true;
+                    }
+                    if (x == this.posX + 1 && y == this.posY + 1){
+                        if (this.chessboard.getSquare(this.posX + 1, this.posY + 1).getPiece() == null){
+                            return false;
+                        }else{
+                            if (this.chessboard.getSquare(this.posX + 1, this.posY + 1).getPiece().getColor() == "white"){
+                                return true;
+                            }else return false;
+                        }
+
+                    }
+                    if (x == this.posX + 1 && y == this.posY - 1){
+                        if (this.chessboard.getSquare(this.posX + 1, this.posY - 1).getPiece() == null){
+                            return false;
+                        }else{
+                            if (this.chessboard.getSquare(this.posX + 1, this.posY - 1).getPiece().getColor() == "white"){
+                                return true;
+                            }else return false;
+                        }
                     }
                 }
             }
@@ -59,7 +127,8 @@ public class Pawn extends Pieces{
         return false;
     }
     @Override
-    public boolean obstacle(int x, int y,  int newX, int newY){
+    public boolean obstacle(int x, int y){
+        if (x < 0 || x > 7 || y < 0 || y > 7) return false;
         return true;
     };
 }

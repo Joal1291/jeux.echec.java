@@ -6,6 +6,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Square extends Pane {
@@ -69,42 +70,75 @@ public class Square extends Pane {
                 Square departureSquare = this.chessBoard.getDepartureSquare();
                 Pieces piece = this.chessBoard.getDepartureSquare().getPiece();
 
-                if (piece.possibleMove(destination.posX, destination.posY) && piece.obstacle(departureSquare.posX, departureSquare.posY, destination.posX, destination.posY)) {
+                if (piece.possibleMove(destination.posX, destination.posY) && piece.obstacle(destination.posX, destination.posY) && destination.isFreeCase()) {
                     destination.setPiece(piece);
                     destination.setFreeCase(false);
-
+                    System.out.println("position de la piece: " + destination.posX + " " + destination.posY + " is free case ?: " + destination.isFreeCase());
                     departureSquare.clearPiece();
                     destination.displayPiece();
                     destination.getPiece().setPosXY(destination.posX, destination.posY);
-                    if (Objects.equals(destination.getPiece().getType(), "pawn") || Objects.equals(destination.getPiece().getType(), "king")) {
+                    if (Objects.equals(destination.getPiece().getType(), "pawn") || Objects.equals(destination.getPiece().getType(), "king") || Objects.equals(destination.getPiece().getType(), "rook")) {
                         destination.getPiece().setFirstmove(false);
                     }
                     this.chessBoard.clearDestination();
                     this.chessBoard.clearDeparture();
-                } else {
+                } else if (piece.possibleMove(destination.posX, destination.posY) && piece.obstacle(destination.posX, destination.posY) && !destination.isFreeCase()){
+                    takePiece(departureSquare, destination);
+                }else{
                     System.out.println("impossible move");
                 }
             this.chessBoard.setClicked(false);
         }
 //    }
-    public void takePiece(){
+    public void addRemoveDisplay(Square departure, Pieces pieceOnDeparture, Square destination, Pieces pieceOnDestination){
+    destination.getChildren().remove(pieceOnDestination.getImageView());
+    destination.clearPiece();
+    destination.setPiece(pieceOnDeparture);
+    destination.setFreeCase(false);
+    destination.displayPiece();
+    destination.getPiece().setPosXY(destination.posX, destination.posY);
+    departure.clearPiece();
+}
+    public void takePiece(Square departure, Square destination){
+        Pieces pieceOnDestination = destination.getPiece();
+        Pieces pieceOnDeparture = departure.getPiece();
+        ArrayList<Pieces> white = this.chessBoard.getWhitePieces();
+        ArrayList<Pieces> black = this.chessBoard.getBlackPieces();
+        ArrayList<Pieces> blackTaken = this.chessBoard.getBlackPiecesTaken();
+        ArrayList<Pieces> whiteTaken = this.chessBoard.getWhitePiecesTaken();
 
+        if(departure.getPiece().getColor() == "white" && destination.getPiece().getColor() == "black") {
+            System.out.println("prise blanche");
+            black.remove(pieceOnDestination);
+            blackTaken.add(pieceOnDestination);
+            addRemoveDisplay(departure, pieceOnDeparture, destination, pieceOnDestination);
+        }else if(departure.getPiece().getColor() == "black" && destination.getPiece().getColor() == "white"){
+            System.out.println("prise noir");
+            white.remove(pieceOnDestination);
+            whiteTaken.add(pieceOnDestination);
+            addRemoveDisplay(departure, pieceOnDeparture, destination, pieceOnDestination);
+        }else{
+            System.out.println("impossible take");
+        }
+
+        this.chessBoard.clearDestination();
+        this.chessBoard.clearDeparture();
     }
     public void selectSquare(){
         Square checkSquare = this.chessBoard.getSquare(posX, posY);
         if (!this.chessBoard.getClicked()){
             if(!checkSquare.isFreeCase()) {
                 this.chessBoard.setDepartureSquare(posX, posY);
+                System.out.println("is free case ? : " + this.chessBoard.getDepartureSquare().isFreeCase());
                 this.chessBoard.setClicked(true);
             }
         }else if(checkSquare == this.chessBoard.getDepartureSquare()){
             this.chessBoard.clearDeparture();
             this.chessBoard.setClicked(false);
         } else if(checkSquare != this.chessBoard.getDepartureSquare()){
-            if (checkSquare.isFreeCase()){
-                moveTo();
-            }
+            moveTo();
         }
     }
+
 }
 

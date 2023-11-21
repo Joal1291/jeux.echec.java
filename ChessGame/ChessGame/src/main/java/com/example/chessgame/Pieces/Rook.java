@@ -12,6 +12,7 @@ public class Rook extends Pieces{
         super("rook", color, chessboard);
         this.image = new Image("/" + color + "_" + this.type + ".png");
         this.imageView = new ImageView(image);
+        this.firstmove = true;
     }
 
     // ------------------------ METHODS ------------------------------
@@ -27,49 +28,38 @@ public class Rook extends Pieces{
         return false;
     }
     @Override
-    public boolean obstacle(int x, int y,  int newX, int newY){
+    public boolean obstacle(int x, int y){
         if (x < 0 || x > 7 || y < 0 || y > 7) return false;
-        if (newX < 0 || newX > 7 || newY < 0 || newY > 7 ) return false;
-        if(this.posX != x && this.posY ==y){
-            if(this.posX > x){ // droite vers gauche
-                for(int i=this.posX-1;i>x;i--){
-
-                    if(!chessboard.getSquare(i, y).isFreeCase()){
-                        return false;
-                    }
+        if (x != this.posX && y == this.posY){
+            if (x > this.posX){ //---------------------------- check up to bottom OK
+                System.out.println("to bottom");
+                for (int i = this.posX + 1; i < x; i++) {
+                    if (!this.chessboard.getSquare(i, y).isFreeCase()) return false;
                 }
-                return true;
             }
-            else { // droite vers gauche
-                for(int i=this.posX+1;i<x;i++){
-
-                    if(!chessboard.getSquare(i, y).isFreeCase()){
-                        return false;
-                    }
+            if(x < this.posX){ // ---------------------------- check bottom to up
+                System.out.println("to up");
+                for (int i = x + 1 ; i < this.posX; i++) {
+                    if (!this.chessboard.getSquare(i, y).isFreeCase()) return false;
                 }
-                return true;
             }
+            return true;
         }
-        if(this.posY != y && this.posX == x){
-            if(this.posY > y){ // bas vers haut
-                for(int i=this.posY-1;i>y;i--){
-
-                    if(!chessboard.getSquare(x, i).isFreeCase()){
-                        return false;
-                    }
+        if(x == this.posX && y != this.posY){
+            if (y > this.posY){ // ---------------------------check left to right OK
+                System.out.println("to right");
+                for (int i = this.posY + 1; i < y ; i++) {
+                    if (!this.chessboard.getSquare(x, i).isFreeCase()) return false;
                 }
-                return true;
             }
-            else { // haut vers bas
-                for(int i=this.posY+1;i<y;i++){
-
-                    if(!chessboard.getSquare(x, i).isFreeCase()){
-                        return false;
-                    }
+            if (y < this.posY){ // --------------------------- check right to left
+                System.out.println("to left");
+                for (int i = y + 1; i < this.posY - 1; i++) {
+                    if (!this.chessboard.getSquare(x, i).isFreeCase()) return false;
                 }
-                return true;
             }
+            return true;
         }
-        return true;
+        return false;
     };
 }

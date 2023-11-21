@@ -16,10 +16,10 @@ public class ChessBoard extends GridPane {
 
     private boolean clicked = false;
 
-    private ArrayList<Pieces> whitePieces = new ArrayList<Pieces>();
-    private ArrayList<Pieces> blackPieces = new ArrayList<Pieces>();
-    private ArrayList<Pieces> whitePiecesTaken = new ArrayList<>();
-    private ArrayList<Pieces> blackPiecesTaken = new ArrayList<>();
+    private final ArrayList<Pieces> whitePieces = new ArrayList<Pieces>();
+    private final ArrayList<Pieces> blackPieces = new ArrayList<Pieces>();
+    private final ArrayList<Pieces> whitePiecesTaken = new ArrayList<Pieces>();
+    private final ArrayList<Pieces> blackPiecesTaken = new ArrayList<Pieces>();
 
     private final Square[][] square = new Square[8][8];
     private final String[][] valueCase = {
@@ -48,7 +48,9 @@ public class ChessBoard extends GridPane {
     // ------------------------------ GETTER, SETTER --------------------
     // ----- getter -----
     public ArrayList<Pieces> getWhitePieces(){return this.whitePieces;}
-    public ArrayList<Pieces> getBlackPieces() {return blackPieces;}
+    public ArrayList<Pieces> getBlackPieces() {return this.blackPieces;}
+    public ArrayList<Pieces> getWhitePiecesTaken() {return this.whitePiecesTaken;}
+    public ArrayList<Pieces> getBlackPiecesTaken() {return this.blackPiecesTaken;}
 
     public Square getDepartureSquare(){return this.departureSquare;}
     public Square getDestinationSquare(){return this.destinationSquare;}
@@ -85,7 +87,6 @@ public class ChessBoard extends GridPane {
                     getSquare(row, col).setFreeCase(false);
                     getSquare(row, col).setPiece(piece);
                     addPiecesToList(piece);
-//                    getSquare(row, col).displayPiece();
                 }
             }
         }

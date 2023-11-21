@@ -45,7 +45,7 @@ public class Knight extends Pieces{
         return false;
     }
     @Override
-    public boolean obstacle(int x, int y,  int newX, int newY){
-        return false;
+    public boolean obstacle(int x, int y){
+        return true;
     };
 }

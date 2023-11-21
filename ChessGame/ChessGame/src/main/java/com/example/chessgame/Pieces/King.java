@@ -9,6 +9,7 @@ public class King extends Pieces{
     // ----------------------- CONSTRUCTOR -------------------------------
     public King(String color, ChessBoard chessboard){
         super("king", color, chessboard);
+        System.out.println("/" + color + "_king.png");
         this.image = new Image("/" + color + "_king.png");
         this.imageView = new ImageView(image);
         this.firstmove = true;
@@ -46,7 +47,7 @@ public class King extends Pieces{
     }
 
     @Override
-    public boolean obstacle(int x, int y,  int newX, int newY){
-        return false;
+    public boolean obstacle(int x, int y){
+        return true;
     };
 }

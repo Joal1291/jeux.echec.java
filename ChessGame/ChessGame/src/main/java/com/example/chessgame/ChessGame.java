@@ -18,6 +18,7 @@ import java.io.IOException;
 public class ChessGame extends Application {
 //    private int x;
 //    private int y;
+// -------------------------------------------- VARIABLES -----------------------------------------------------
     @Override
     public void start(Stage primaryStage) throws IOException {
         primaryStage.setTitle("Chess Game"); // set title to the game
@@ -36,6 +37,7 @@ public class ChessGame extends Application {
 
     }
 
+    // ------------------------------------------------------- METHODS ---------------------------------------
     public void displayPos(int x, int y, String valueOfCase){
         System.out.println("value of case: " + valueOfCase);
     }

@@ -41,7 +41,71 @@ public class Queen extends Pieces{
         return false;
     }
     @Override
-    public boolean obstacle(int x, int y,  int newX, int newY){
+    public boolean obstacle(int x, int y){
+        if(x < 0 || x > 7 || y < 0 || y > 7) return false;
+        if (x != this.posX && y == this.posY){
+            if (x > this.posX){ //---------------------------- check up to bottom OK
+                System.out.println("to bottom");
+                for (int i = this.posX + 1; i < x; i++) {
+                    if (!this.chessboard.getSquare(i, y).isFreeCase()) return false;
+                }
+            }
+            if(x < this.posX){ // ---------------------------- check bottom to up
+                System.out.println("to up");
+                for (int i = x + 1 ; i < this.posX; i++) {
+                    if (!this.chessboard.getSquare(i, y).isFreeCase()) return false;
+                }
+            }
+            return true;
+        }
+        if(x == this.posX && y != this.posY){
+            if (y > this.posY){ // ---------------------------check left to right OK
+                System.out.println("to right");
+                for (int i = this.posY + 1; i < y ; i++) {
+                    if (!this.chessboard.getSquare(x, i).isFreeCase()) return false;
+                }
+            }
+            if (y < this.posY){ // --------------------------- check right to left
+                System.out.println("to left");
+                for (int i = y + 1; i < this.posY - 1; i++) {
+                    if (!this.chessboard.getSquare(x, i).isFreeCase()) return false;
+                }
+            }
+            return true;
+        }
+        if (x > this.posX && y > this.posY){ // ------- check up left to bottom right
+            while(this.posX != x - 1 && this.posY != y -1){
+                if(!this.chessboard.getSquare(x-1, y-1).isFreeCase()) return false;
+                x--;
+                y--;
+            }
+            return true;
+        }
+
+        if(x > this.posX && y < this.posY){ // -------- check up right to bottom left
+            while(this.posX != x - 1 && this.posY != y + 1){
+                if(!this.chessboard.getSquare(x-1, y+1).isFreeCase()) return false;
+                x--;
+                y++;
+            }
+            return true;
+        }
+        if (x < this.posX && y > this.posY){ // ------- check bottom left to up right
+            while(this.posX != x + 1 && this.posY != y - 1){
+                if (!this.chessboard.getSquare(x+1, y-1).isFreeCase()) return false;
+                x++;
+                y--;
+            }
+            return true;
+        }
+        if (x < this.posX && y < this.posY){ // ------- check bottom right to up left
+            while(this.posX != x+1 && this.posY != y+1){
+                if (!this.chessboard.getSquare(x+1, y+1).isFreeCase()) return false;
+                x++;
+                y++;
+            }
+            return true;
+        }
         return false;
     };
 }
